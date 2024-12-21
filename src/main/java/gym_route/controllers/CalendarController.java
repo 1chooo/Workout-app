@@ -45,7 +45,7 @@ public class CalendarController {
   Calendar calendarCurrent = Calendar.getInstance();
   static Label[][] dateLabelMatrix;
   static VBox[][] cellVboxMatrix;
-  static ListView[][] curriculumListViewMatrix;
+  static ListView<String>[][] curriculumListViewMatrix;
 
   @FXML
   public void initialize() {
@@ -92,7 +92,6 @@ public class CalendarController {
   public void displayCalendar() {
     calendarUseForDisplay.set(Calendar.DATE, 1);
 
-    int currentYear = calendarCurrent.get(Calendar.YEAR);
     int currenMonth = calendarCurrent.get(Calendar.MONTH) + 1;
     int currentDate = calendarCurrent.get(Calendar.DATE);
     int weekOf1th = calendarUseForDisplay.get(Calendar.DAY_OF_WEEK) - 1;
