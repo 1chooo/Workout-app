@@ -29,7 +29,7 @@ public class CalendarController {
       b40, b41, b42, b43, b44, b45, b46;
 
   @FXML
-  ListView lv00, lv01, lv02, lv03, lv04, lv05, lv06,
+  ListView<String> lv00, lv01, lv02, lv03, lv04, lv05, lv06,
       lv10, lv11, lv12, lv13, lv14, lv15, lv16,
       lv20, lv21, lv22, lv23, lv24, lv25, lv26,
       lv30, lv31, lv32, lv33, lv34, lv35, lv36,
@@ -41,8 +41,8 @@ public class CalendarController {
   @FXML
   Label year;
 
-  static Calendar calendarUseForDisplay = Calendar.getInstance();
-  static Calendar calendarCurrent = Calendar.getInstance();
+  Calendar calendarUseForDisplay = Calendar.getInstance();
+  Calendar calendarCurrent = Calendar.getInstance();
   static Label[][] dateLabelMatrix;
   static VBox[][] cellVboxMatrix;
   static ListView[][] curriculumListViewMatrix;
@@ -77,7 +77,7 @@ public class CalendarController {
 
   static ArrayList<ObservableList<String>> dayListOfWeek = new ArrayList<>();
 
-  public static void loadCurriculumToWeekToDayListOfWeek() {
+  public void loadCurriculumToWeekToDayListOfWeek() {
     for (int column = 0; column <= 6; column++) {
       ObservableList<String> tempDayList = FXCollections.observableArrayList();
       for (int row = 0; row <= 7; row++) {
@@ -89,7 +89,7 @@ public class CalendarController {
     }
   }
 
-  public static void displayCalendar() {
+  public void displayCalendar() {
     calendarUseForDisplay.set(Calendar.DATE, 1);
 
     int currentYear = calendarCurrent.get(Calendar.YEAR);

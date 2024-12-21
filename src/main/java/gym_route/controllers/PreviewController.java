@@ -28,10 +28,11 @@ public class PreviewController {
     }
 
     public void clickedViewCalender() throws IOException {
-        CalendarController.loadCurriculumToWeekToDayListOfWeek();
+        CalendarController calendarController = new CalendarController();
+        calendarController.loadCurriculumToWeekToDayListOfWeek();
         SceneController.switchScene(PAGE.CALENDAR);
         System.out.println(CalendarController.dayListOfWeek);// test
-        CalendarController.displayCalendar();
+        calendarController.displayCalendar();
     }
 
     public static void displayScreenArrayToPreview() throws IOException {
